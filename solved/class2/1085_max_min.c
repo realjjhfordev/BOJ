@@ -16,6 +16,6 @@ int main(void)
 
   to_axis = min(x, y);
 
-  cout << min(to_border, to_axis)
+  cout << min(to_border, to_axis);
 
 }
