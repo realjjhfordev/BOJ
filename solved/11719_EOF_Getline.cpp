@@ -1,13 +1,67 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
 
-int main() 
+
+int main(void)
 {
-    int a,b;
-    while(scanf("%d %d", &a, &b)!=EOF) 
-    {
-        printf("%d\n", a+b);
-    }
+  ios::sync_with_stdio(0);
+  cin.tie(0); cout.tie(0);
+  
+  string s;
+
+  while(getline(cin, s))
+  {
+    cout << s << '\n';
+  }
+
+  
 }
+
+/*
+
+
+  string 라이브러리 속에 있는 getline 함수를 사용하여 문자열의 입력이 주어지면 string 객체에 저장한 뒤 출력하기로 하였다. 
+
++) istream 속 getline함수는 C언어 방식의 문자열을 처리하는 함수이다. 
+
+ 
+
+● istream& getline(istream& is, string& str); 
+
+● istream& getline(istream& is, string& str, char delim);
+
+▷ param
+
+- is : 입력스트림 오브젝트 ex) cin
+
+- str : 입력 받은 문자열을 저장할 string 객체
+
+- delim : 제한자로 이 문자에 도달시 추출이 중단된다. 이떄 이 문자는 string 객체에 기록되지 않는다. 
+
+▷ description
+
+- str이라는 string 객체에 is라는 입력스트림을 통해 문자열을 입력 받는다. (단, delim을 통해 입력받는 문자열에 제한을 둘 수 있음)
+
+▷ return
+
+- eof가 입력되면 0이 반환된다.
+- getline 함수는 eof가 입력되면 0이 반환된다.
+
+https://animoto1.tistory.com/entry/%EB%B0%B1%EC%A4%80-11718-%EA%B7%B8%EB%8C%80%EB%A1%9C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0-C
+
+
+
+
+
+
+
+
+문제에서 한 줄에 최대 100자가 들어온다는 말은 100자 이하가 들어온다는 것이 보장된다는 말이므로 
+"100자를 넘어서 입력이 들어올 때 받지 말아야 하나?"와 같은 걱정은 하지 않아도 됩니다. (예외처리 안해도 됨)
+
+
+
+
 
 /*
 
