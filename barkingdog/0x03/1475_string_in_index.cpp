@@ -21,11 +21,12 @@ int main(void)
     ary[n[i]-'0']++;
  }
 
- ary[9] = (ary[9]+1)/2;
+ ary[9] = (ary[9]+1)/2; // (a[6]+a[9])/2를 올림한 값이 6, 9에 대한 필요한 세트의 수이므로 (a[6]+a[9]+1)/2을 계산, 
+                        // 여기서는 a[6]에 갈 값을 a[9]에 몰아줬으므로 (ary[9]+1)/2
 
  max = ary[0];
 
- for(int j = 1; j <= 9; j++)
+ for(int j = 1; j <= 9; j++) // max함수로 최대값을 구해도 좋음, max(max, ary[idx])
  {
   if(ary[j] > max)
       max = ary[j];
