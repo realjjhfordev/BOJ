@@ -10,7 +10,7 @@ int main(void)
   int alphabet[26];
   string s;
 
-  for(int k = 0; k < 26; k++)     // 배열 초기화할 땐 for문 돌리기!!
+  for(int k = 0; k < 26; k++)     // 배열 초기화할 땐 for문 돌리거나 fill함수
   {
    alphabet[k] = -1;
   }
