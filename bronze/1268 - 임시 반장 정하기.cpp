@@ -40,32 +40,51 @@ int main(void)
       }
     }
 
-for(int i = 1; i <= stu; i++)
+for(int i = 1; i <= stu; i++) // 알아볼 학생
 {
  int temp = 0;
-  for(int j = 1; j <= 5; j++) // 열(학년)
+  for(int j = 1; j <= stu; j++) // 상대 학생
   {
-    if(inter[i][j] == true)
+    if(inter[i][j] == true) // 상대 학생과 같은 반이 된 적이 있다면 카운트해준다
       temp++;
   }
-  if(temp > max)
+  if(temp > max) // 같은 반이었던 적이 있는 학생 최대값 구하기
     {
-      temp = max;
+      max = temp;
       ans = i;
     }
 }
 
+if(max == 0) // line 84, 모두 처음보는 사이인 경우 ans값은 바뀌지 않음
+  cout << '1'; 
+
+else
 cout << ans;
 
 }
 
 
+/*
+
+5
+2 3 1 7 3
+4 1 9 6 8
+5 5 2 4 4
+6 5 2 6 7
+8 4 2 2 2
+
+inter
+0 0 0 0 0 
+0 0 0 1 0 
+0 0 0 1 1 
+0 1 1 0 1 
+0 0 1 1 0 
 
 
-
-
-4
-3 5 1 5 5     
-4 4 3 5 1     
-1 2 3 2 2     
-1 3 3 2 2 
+5 // line 58 example
+1 1 1 1 1
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+5 5 5 5 5
+*/
