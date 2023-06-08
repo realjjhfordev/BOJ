@@ -17,8 +17,9 @@ int main()
   for(int i = 0; i < n; i++) // n줄 작성
     cin >> board[i];
 
-  for(int i = 0 ; i < n; i++) // dist 전부 -1로 초기화하면 방문여부와 시작점으로 부터의 거리 모두 기록할 수 있다.
-    fill(dist[i], dist[i]+m, -1); //dist[0] == dist[0][0], dist[1] == dist[1][0], dist[0]+1 == dist[0][1]
+  for(int i = 0 ; i < n; i++) // dist 전부 -1로 초기화하면 방문여부와 시작점으로 부터의 거리 모두 기록할 수 있다
+    fill(dist[i], dist[i]+m, -1); //dist[0] == dist[0][0], dist[1] == dist[1][0], dist[0]+1 == dist[0][1]  
+    //dist[i] 부터 dist[i]+m 직전까지(dist[i]+m은 포함하지 않음) -1로 초기화
 
   queue<pair<int,int>> Q;
 
