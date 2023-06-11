@@ -12,7 +12,7 @@ int main()
  cin >> n >> m;
  int dist[n][m]; // 방문여부와 동시에 시작점으로부터의 거리를 저장하는 2차원 배열
 
- string board[n]; // board[n][m] -> n행에있는 원소에서 m번째 글자를 가져옴
+ string board[n]; // 입력데이터가 공백으로 구분되어있지 않아서 스트링사용 board[n][m] -> n행에있는 원소에서 m번째 글자를 가져옴
 
   for(int i = 0; i < n; i++) // n줄 작성
     cin >> board[i];
