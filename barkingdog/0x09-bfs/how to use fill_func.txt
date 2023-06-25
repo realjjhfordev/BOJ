@@ -1,0 +1,123 @@
+fill function 사용법
+https://zynar.tistory.com/90
+
+ 
+
+fill과 fill_n의 차이는
+
+fill은 시작하는곳 부터 끝나는곳까지 채운다는것이고
+
+fill_n은 시작하는곳 부터 얼마만큼 채울것인지로 이해했다
+
+ 
+
+fill과 fill_n을 배열에서 사용하려면 다음과 같이 하면 된다
+
+ 
+
+일단 fill과 fill_n은 <algorithm> 헤더에 정의되어있고 네임스페이스는 std라고 한다
+
+내가 사용하는 비쥬얼스튜디오에서는 #include를 쓸필요는 없고 using namespace std;만 적으면 사용이된다
+
+만약 오류가 난다면 #include <algorithm>를 입력해야할거같다
+
+ 
+
+1차원 배열에서의 fill과 fill_n은 다음의 방법으로 사용할 수 있다
+
+ 
+
+    fill을 사용하는 방법
+
+ 
+
+fill(시작 주소, 끝 주소, 변경 값);
+
+int int_arr_1[9];
+
+fill(int_arr_1, int_arr_1 + 9, 5);
+fill(int_arr_1, int_arr_1 + sizeof int_arr_1 / sizeof int_arr_1[0], 5);
+
+fill(&int_arr_1[0], &int_arr_1[9], 5);
+fill(&int_arr_1[0], &int_arr_1[sizeof int_arr_1 / sizeof int_arr_1[0]], 5);
+
+ 
+
+    fill_n을 사용하는 방법
+
+ 
+
+fill_n(시작 주소, 몇 번 할지, 변경 값);
+
+int int_arr_1[9];
+
+fill_n(int_arr_1, 9, 5);
+fill_n(int_arr_1, sizeof int_arr_1 / sizeof int_arr_1[0], 5);
+
+fill_n(&int_arr_1[0], 9, 5);
+fill_n(&int_arr_1[0], sizeof int_arr_1 / sizeof int_arr_1[0], 5);
+
+ 
+
+ 
+
+모두 동일한 결과가 나온다
+
+ 
+
+여기서 만약 어디부터 어디까지 예를들면 두번째 인덱스부터 4번째 까지만 초기화를 한다면 다음 코드 처럼 하면된다
+
+fill(&int_arr_1[1], &int_arr_1[4], 5);
+fill_n(&int_arr_1[1], 3, 5);
+
+ 
+
+ 
+
+2번째부터 4번째 까지만 초기화 하여 나머지 인덱스에는 이상한 값이 들어가 있다
+
+ 
+
+그렇다면 2차원이나 3차원 배열에선 어떻게 하면될까
+
+fill의 주소를 사용하려면 인덱스 끝을 잘 봐야한다
+
+[인덱스-1][인덱스] 이렇게 해야 작동을 한다
+
+ 
+
+int int_arr_2[9][6];
+
+fill(&int_arr_2[0][0], &int_arr_2[8][6], 5);
+fill_n(&int_arr_2[0][0], 9 * 6, 5);
+
+또는 for문을 사용한
+
+for(int i = 0 ; i < n; i++) 
+ fill(dist[i], dist[i]+m, -1); 
+
+// dist[0] == dist[0][0], dist[1] == dist[1][0], dist[0]+1 == dist[0][1]  
+// dist[i] 부터 dist[i]+m 직전까지(dist[i]+m은 포함하지 않음) -1로 초기화
+
+ 
+
+ 
+
+3차원도 마찬가지로 2차원 하는것 처럼 하면 된다
+
+ 
+
+int int_arr_3[3][4][2];
+
+fill(&int_arr_3[0][0][0], &int_arr_3[2][3][2], 5);
+fill_n(&int_arr_3[0][0][0], 3 * 4 * 2, 5);
+
+ 
+
+ 
+
+상황에 맞게 fill과 fill_n을 구분해서 사용하면 될것같다
+
+단순 모든 값을 초기화 할때는 fill_n이 편한것 같다
+
+ 
