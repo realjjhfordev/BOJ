@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void func1(int n)
+int func1(int n)
 {
   if (n == 0) return 0;
   cout << 'n' << ' ';
@@ -10,7 +10,7 @@ void func1(int n)
 }
 //n부터 1까지 출력하는 함수
 
-void func2(int n)
+int func2(int n)
 {
   if (n == 0) return 0;
   return n+func2(n-1);
